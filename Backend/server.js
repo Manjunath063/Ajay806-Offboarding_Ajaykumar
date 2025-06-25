@@ -17,9 +17,10 @@ const pool = new Pool({
 
 // Middleware
 app.use(cors({
-  origin: ['http://13.51.64.129:3000', 'http://127.0.0.1:5501'],
+  origin: ['http://13.51.64.129:8079', 'http://:13.51.64.129:8080'],
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
+  credentials: true
 }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
