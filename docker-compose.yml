@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  backend:
+    container_name: backend-806
+    build: ./Backend
+    ports:
+      - "3044:3044"
+    depends_on:
+      - postgres
+    environment:
+      - PGUSER=postgres
+      - PGPASSWORD=admin123
+      - PGHOST=postgres
+      - PGDATABASE=new_employee_db
+      - PGPORT=5432
+
+  frontend:
+    container_name: frontend-806
+    build: ./Frontend
+    ports:
+      - "8079:80"
+    depends_on:
+      - backend
+
+  hr_page:
+    container_name: hr-page-806
+    build: ./Hr_page
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+  postgres:
+    container_name: postgres-806
+    image: postgres:13
+    ports:
+      - "5439:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: new_employee_db
+    volumes:
+      - postgres_data_806:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  postgres_data_806:
+
