@@ -17,7 +17,7 @@ const pool = new Pool({
 
 // Middleware
 app.use(cors({
-  origin: ['http://13.51.64.129:8079', 'http://:13.51.64.129:8080'],
+  origin: ['http://16.16.65.179:8079', 'http://:16.16.65.179:8080'],
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
   credentials: true
@@ -127,9 +127,9 @@ pool.connect()
     console.log('✅ Connected to database');
     initializeDatabase().then(() => {
       app.listen(port, () => {
-        console.log(`🚀 Server running on http://13.51.64.129:${port}`);
-        console.log(`📄 Offboarding Form: http://13.51.64.129:${port}/offboarding.html`);
-        console.log(`📊 HR Offboarding Dashboard: http://13.51.64.129:${port}/hrOffboarding.html`);
+        console.log(`🚀 Server running on http://16.16.65.179:${port}`);
+        console.log(`📄 Offboarding Form: http://16.16.65.179:${port}/offboarding.html`);
+        console.log(`📊 HR Offboarding Dashboard: http://16.16.65.179:${port}/hrOffboarding.html`);
       });
     });
   })
