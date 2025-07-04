@@ -68,7 +68,7 @@ app.listen(port, () => {
   initializeDatabase();
 });
 
-<<<<<<< HEAD
+
 // Get all offboarding records
 app.get('/api/offboarding/all', async (req, res) => {
   try {
@@ -102,5 +102,3 @@ pool.connect()
     console.error('❌ Database connection failed:', err.message);
     process.exit(1);
   });
-=======
->>>>>>> e15ec7eb84db53f5f3f494bb3b7df910ce7c1030
