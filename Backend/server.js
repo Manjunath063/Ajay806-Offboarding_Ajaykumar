@@ -92,9 +92,9 @@ pool.connect()
     console.log('✅ Connected to database');
     initializeDatabase().then(() => {
       app.listen(port, () => {
-        console.log(`🚀 Server running on http://16.16.65.179:${port}`);
-        console.log(`📄 Offboarding Form: http://16.16.65.179:${port}/offboarding.html`);
-        console.log(`📊 HR Offboarding Dashboard: http://16.16.65.179:${port}/hrOffboarding.html`);
+        console.log(`🚀 Server running on http://51.20.115.251:${port}`);
+        console.log(`📄 Offboarding Form: http://51.20.115.251:${port}/offboarding.html`);
+        console.log(`📊 HR Offboarding Dashboard: http://51.20.115.251:${port}/hrOffboarding.html`);
       });
     });
   })
